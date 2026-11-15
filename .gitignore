@@ -1,0 +1,12 @@
+.venv*/
+.tools/
+__pycache__/
+.pytest_cache/
+data/
+logs/
+*.pyc
+*.part
+outputs/
+.env
+.env.*
+!.env.example
