@@ -1,0 +1,62 @@
+{
+  "model": "tencent/HunyuanOCR",
+  "revision": "47644ecc4fc854efa4f505155158831f36773ee4",
+  "download_endpoint": "https://hf-mirror.com",
+  "files": {
+    "config.json": {
+      "bytes": 2233,
+      "sha256": "14aeb192e94fbe9c3ec71fb7ed003955397be08eb4b345dd7b923549798b60ba",
+      "expected_sha256": null
+    },
+    "generation_config.json": {
+      "bytes": 139,
+      "sha256": "e9f4d443b97de6cb40767d12b5fc045a5ca3fb6d2f911124fce307bfbe1ad585",
+      "expected_sha256": null
+    },
+    "model.safetensors": {
+      "bytes": 2239932512,
+      "sha256": "632a1e082c4dd5a3284cf1ffcdba2fdaa06f435762c58c2f34aff0f3bd6c0249",
+      "expected_sha256": "632a1e082c4dd5a3284cf1ffcdba2fdaa06f435762c58c2f34aff0f3bd6c0249"
+    },
+    "preprocessor_config.json": {
+      "bytes": 579,
+      "sha256": "e17baf5f25f542380a3a8231fefa08f359d86db1ac088feb12ecb8b06ddb01c3",
+      "expected_sha256": null
+    },
+    "special_tokens_map.json": {
+      "bytes": 836,
+      "sha256": "71442c8c43669f4cedd669f1700f89a741773c49aef55783fbd533f72f050c92",
+      "expected_sha256": null
+    },
+    "tokenizer.json": {
+      "bytes": 9527297,
+      "sha256": "3e2ab46bcc5ed8bce013b245c6daecf19fa1d2a18f48a9c88a1f571dcbf7dfd3",
+      "expected_sha256": null
+    },
+    "tokenizer_config.json": {
+      "bytes": 166592,
+      "sha256": "804e8a7fb5a129afb19f6ad88c51c5d3c1aa643b6abb9536d10bcdcf633b4d74",
+      "expected_sha256": null
+    },
+    "chat_template.jinja": {
+      "bytes": 994,
+      "sha256": "be3371395b9e67a8f981d86543eb5a93d132a1dc3f54058a2d75b4ed1efc73fe",
+      "expected_sha256": null
+    },
+    "video_preprocessor_config.json": {
+      "bytes": 916,
+      "sha256": "f0b9fba99cdc7d556adb3a9023f961534d46c1b7c84b31c6684d8562cd866b79",
+      "expected_sha256": null
+    },
+    "LICENSE": {
+      "bytes": 16277,
+      "sha256": "745adaa59575d2a98b64fd6d3452537b477a6b6edc126f742fc055313cc3d3e0",
+      "expected_sha256": null
+    },
+    "README.md": {
+      "bytes": 14075,
+      "sha256": "7e5438581036dfb8909120812d8605f534149bcf568c8ec76bd2ad3d9e18bb6c",
+      "expected_sha256": null
+    }
+  }
+}

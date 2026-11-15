@@ -1,0 +1,7 @@
+{
+  "source": "https://huggingface.co/api/models/tencent/HunyuanOCR/revision/47644ecc4fc854efa4f505155158831f36773ee4?blobs=true",
+  "revision": "47644ecc4fc854efa4f505155158831f36773ee4",
+  "filename": "model.safetensors",
+  "bytes": 2239932512,
+  "sha256": "632a1e082c4dd5a3284cf1ffcdba2fdaa06f435762c58c2f34aff0f3bd6c0249"
+}

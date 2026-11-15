@@ -1,0 +1,130 @@
+{
+  "checked_at": "2026-11-15T17:31:07.090663+00:00",
+  "scope": "public_copy_cpu_verification_no_new_gpu_requests",
+  "python": "3.12.14",
+  "cpu_tests": {
+    "passed": 31,
+    "warnings": [
+      "Starlette/AnyIO deprecation",
+      "PyMuPDF SWIG deprecations"
+    ],
+    "new_gpu_launcher_tests": 4,
+    "command": "python -m pytest tests -q -o addopts="
+  },
+  "pip_check": "passed",
+  "python_syntax": [
+    "tests/test_doclab.py",
+    "tests/test_public_start.py",
+    "tests/test_config_compat.py",
+    "backend/service.py",
+    "backend/config.py",
+    "backend/evaluation.py",
+    "backend/__init__.py",
+    "backend/images.py",
+    "backend/main.py",
+    "backend/repository.py",
+    "samples/build_samples.py",
+    "scripts/run_acceptance.py",
+    "scripts/prepare_python_headers.py",
+    "scripts/download_model.py",
+    "scripts/install_user_services.py",
+    "scripts/sample_gpu.py",
+    "scripts/model_overrides.py"
+  ],
+  "shell_syntax": [
+    "scripts/start_app.sh",
+    "scripts/install_app_environment.sh",
+    "scripts/install_model_environment.sh",
+    "scripts/start_model.sh"
+  ],
+  "javascript_syntax": "passed",
+  "local_links": [
+    {
+      "source": "README.md",
+      "target": "THIRD_PARTY_NOTICES.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "evidence/web-results-chinese-desktop.png",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/部署与排障.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/首轮实测报告.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "evidence/acceptance-summary.json",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/第一课_看懂一次文档解析.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/重新开始学习.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/样本与评测说明.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/部署与排障.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/opensource-roadmap.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "THIRD_PARTY_NOTICES.md",
+      "exists": true
+    },
+    {
+      "source": "docs/第一课_看懂一次文档解析.md",
+      "target": "../backend/images.py",
+      "exists": true
+    },
+    {
+      "source": "docs/第一课_看懂一次文档解析.md",
+      "target": "../backend/service.py",
+      "exists": true
+    },
+    {
+      "source": "docs/第一课_看懂一次文档解析.md",
+      "target": "../backend/evaluation.py",
+      "exists": true
+    },
+    {
+      "source": "docs/第一课_看懂一次文档解析.md",
+      "target": "../backend/repository.py",
+      "exists": true
+    },
+    {
+      "source": "docs/第一课_看懂一次文档解析.md",
+      "target": "样本与评测说明.md",
+      "exists": true
+    }
+  ],
+  "sample_hashes": "6 passed",
+  "historical_record_consistency": "8 completed pages / 5 jobs",
+  "private_values_check": "passed",
+  "github_actions_status": "not_run_yet",
+  "real_gpu_redeployment": "not_run_in_this_publication_step",
+  "errors": [],
+  "research_document": "official_sources_reviewed; planned_experiments_not_run"
+}

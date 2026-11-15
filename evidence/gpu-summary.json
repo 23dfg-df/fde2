@@ -1,0 +1,25 @@
+{
+  "scope": "whole_device_1_second_sampling_not_true_process_peak",
+  "first_sample": "2026-11-15T16:22:46.171878+00:00",
+  "last_sample": "2026-11-15T16:25:43.601037+00:00",
+  "gpus": [
+    {
+      "index": 0,
+      "samples": 166,
+      "min_used_mib": 9676,
+      "max_sampled_used_mib": 9676,
+      "min_free_mib": 22436,
+      "max_sampled_utilization_percent": 0,
+      "max_sampled_power_watts": 27.03
+    },
+    {
+      "index": 1,
+      "samples": 166,
+      "min_used_mib": 19427,
+      "max_sampled_used_mib": 19691,
+      "min_free_mib": 12420,
+      "max_sampled_utilization_percent": 88,
+      "max_sampled_power_watts": 144.74
+    }
+  ]
+}

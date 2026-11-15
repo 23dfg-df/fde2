@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "dataset_id": "fde-doc-synthetic-v1",
+  "pages": [
+    {
+      "id": "sample-01",
+      "bytes": 166028,
+      "text_characters": 203,
+      "visible_runs": 12,
+      "status": "passed"
+    },
+    {
+      "id": "sample-02",
+      "bytes": 104834,
+      "text_characters": 458,
+      "visible_runs": 12,
+      "status": "passed"
+    },
+    {
+      "id": "sample-03",
+      "bytes": 116284,
+      "text_characters": 216,
+      "visible_runs": 18,
+      "status": "passed"
+    },
+    {
+      "id": "sample-04",
+      "bytes": 76316,
+      "text_characters": 109,
+      "visible_runs": 18,
+      "status": "passed"
+    },
+    {
+      "id": "sample-05",
+      "bytes": 164877,
+      "text_characters": 223,
+      "visible_runs": 18,
+      "status": "passed"
+    },
+    {
+      "id": "sample-06",
+      "bytes": 174411,
+      "text_characters": 407,
+      "visible_runs": 16,
+      "status": "passed"
+    }
+  ],
+  "deterministic_rebuild": "passed_same_font",
+  "visual_review": "all_six_contact_sheet_passed",
+  "gpu_inference": "not_run",
+  "business_accuracy": "not_assessed"
+}

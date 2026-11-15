@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>DocLens · 腾讯文档解析实验室</title>
+  <meta name="description" content="对照原始文档与真实解析结果，学习腾讯 HunyuanOCR 的部署、质量评测与资源观察。">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">跳到解析工作区</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="DocLens 文档解析实验室首页">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 4h11l6 6v18H8z"/><path d="M19 4v7h6M12 16h9M12 21h6"/></svg></span>
+      <span><strong>DocLens<span class="brand-dot">.</span></strong><small>腾讯文档解析实验室</small></span>
+    </a>
+    <div class="topbar-right">
+      <span class="model-badge" id="model-badge"><span class="status-dot"></span><span id="model-badge-text">正在连接模型</span></span>
+      <button class="icon-button" id="refresh-button" type="button" aria-label="刷新服务与实验状态" title="刷新服务与实验状态"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 7.2A7 7 0 0 1 18 6l2 2M4 16l2 2A7 7 0 0 0 17.9 16.8"/></svg></button>
+      <button class="button button-quiet" id="help-button" type="button">实验指南</button>
+    </div>
+  </header>
+
+  <main class="app-layout">
+    <aside class="sidebar" aria-label="文档与运行配置">
+      <div class="sidebar-heading"><span class="eyebrow">YOUR DOCUMENTS</span><h2>选择一份文档</h2><p>先观察原图，再验证解析结果。</p></div>
+      <label class="upload-zone" id="upload-zone" tabindex="0" role="button" aria-label="上传图片或 PDF，最大12 MiB、最多6页">
+        <input id="file-input" type="file" accept=".png,.jpg,.jpeg,.webp,.pdf,image/png,image/jpeg,image/webp,application/pdf" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m-4 4 4-4 4 4M4 14v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></svg>
+        <strong id="upload-label">上传或拖入文档</strong><span>PNG、JPG、WebP、PDF</span><small>单文件 ≤ 12 MiB · PDF 最多 6 页</small>
+      </label>
+      <div class="library-label"><h3>文档列表</h3><span id="selection-count">已选 0 / 6</span></div>
+      <div id="page-list" class="page-list" aria-label="可选文档"><p class="list-placeholder">正在读取文档…</p></div>
+      <p class="selection-hint">勾选加入实验；点击文档查看原图。</p>
+
+      <form id="run-form" class="run-config">
+        <div class="config-heading"><span class="eyebrow">RUN SETTINGS</span><h3>本次解析</h3></div>
+        <label class="field-label" for="task-select">解析任务</label>
+        <select id="task-select" name="task" aria-describedby="task-hint"><option value="structured_parse">纯文本识别（适合 CER）</option><option value="doc_parse">文档解析 · 文字 / 公式 / 表格</option><option value="table">表格解析 · HTML 结构</option></select>
+        <p class="field-hint" id="task-hint">提取图中的文字；有全文参考的样例可计算 CER。</p>
+        <label class="field-label label-row" for="max-tokens">最多输出 token <span>256–4096</span></label>
+        <input id="max-tokens" name="max_tokens" type="number" min="256" max="4096" step="1" value="2048" inputmode="numeric" required>
+        <p class="field-hint">达到上限可能截断结果；实际输出量会单独记录。</p>
+        <button class="button button-primary run-button" id="run-button" type="submit" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg><span id="run-label">开始解析</span></button>
+        <p class="run-hint" id="run-hint">等待模型就绪与文档加载。</p>
+      </form>
+      <section class="resource-card" aria-labelledby="resource-title">
+        <div class="resource-heading"><span class="resource-icon" aria-hidden="true">01</span><div><h3 id="resource-title">GPU 1</h3><span id="gpu-name">等待资源采样</span></div></div>
+        <div class="resource-values"><span>整卡显存</span><strong id="gpu-memory">—</strong></div>
+        <div class="memory-track" role="meter" aria-label="GPU 1 整卡显存占用" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="memory-meter"><span id="memory-fill"></span></div>
+        <div class="resource-meta"><span id="gpu-free">剩余 —</span><span id="gpu-utilization">利用率 —</span></div>
+        <p class="resource-note" id="sample-time">最近一次整卡采样；包含其他进程。</p>
+      </section>
+    </aside>
+
+    <section class="main-content" id="workspace" aria-label="文档解析工作区">
+      <div class="workspace-heading"><div><span class="eyebrow">DOCUMENT INTELLIGENCE WORKSPACE</span><h1>从原始文档，到可检查的结果</h1><p>用真实推理观察文字、表格和结构如何被读取。</p></div><span class="workspace-tag">HunyuanOCR</span></div>
+      <ol class="workflow" aria-label="实验流程"><li><span>01</span>选择文档</li><li><span>02</span>运行解析</li><li><span>03</span>对照与评测</li></ol>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <div id="active-banner" class="active-banner" hidden><div><strong id="active-title">正在处理文档</strong><p id="active-description">逐页处理，结果会自动更新。</p></div><button class="button button-danger" type="button" id="cancel-button">取消后续页面</button></div>
+
+      <div class="comparison-grid">
+        <section class="document-panel panel" aria-labelledby="source-title">
+          <header class="panel-header"><div><span class="panel-kicker">SOURCE</span><h2 id="source-title">原始文档</h2></div><button class="button button-small" type="button" id="zoom-button" disabled>查看大图 <span aria-hidden="true">↗</span></button></header>
+          <div class="source-meta"><strong id="source-name">尚未选择文档</strong><span id="source-dimensions">选择左侧样例或上传文件</span></div>
+          <div class="source-stage" id="source-stage"><div class="empty-source" id="empty-source"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 9h22l10 10v36H17z"/><path d="M39 9v12h10M24 30h18M24 38h18M24 46h11"/></svg><strong>从一页文档开始</strong><p>左侧样例可直接用于首次实验。</p></div><img id="source-image" alt="" hidden></div>
+          <footer class="source-footer"><span class="reference-badge" id="reference-badge">参考标注待检查</span><span id="source-kind">原图用于人工核对</span></footer>
+        </section>
+
+        <section class="result-panel panel" aria-labelledby="result-title">
+          <header class="panel-header"><div><span class="panel-kicker">OBSERVATION</span><h2 id="result-title">解析结果</h2></div><span id="result-status" class="status-pill neutral">尚未运行</span></header>
+          <div class="metrics-grid" aria-label="本页真实运行指标">
+            <div class="metric"><span>单页请求耗时</span><strong id="metric-time">—</strong><small>客户端等待完整响应</small></div>
+            <div class="metric"><span>输入 / 输出 token</span><strong id="metric-tokens">—</strong><small>由模型服务返回</small></div>
+          </div>
+          <div class="result-tabs" role="tablist" aria-label="结果内容"><button id="tab-text" type="button" role="tab" aria-controls="view-text" aria-selected="true" data-tab="text">解析文本</button><button id="tab-evaluation" type="button" role="tab" aria-controls="view-evaluation" aria-selected="false" tabindex="-1" data-tab="evaluation">质量评测</button><button id="tab-record" type="button" role="tab" aria-controls="view-record" aria-selected="false" tabindex="-1" data-tab="record">原始记录</button></div>
+          <div class="result-content">
+            <div id="view-text" class="tab-view" role="tabpanel" aria-labelledby="tab-text">
+              <div class="result-empty" id="result-empty"><span class="empty-orbit" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 6h12l5 5v15H8zM19 6v6h6M12 17h9M12 21h6"/></svg></span><h3>等待第一次真实解析</h3><p>选择文档并运行后，这里会显示模型返回的文字。结果不会预先填充。</p></div>
+              <div id="output-wrapper" hidden><div class="output-toolbar"><span id="output-format">模型输出 · 纯文本查看</span><button type="button" class="text-button" id="copy-output">复制文本</button></div><div id="page-error" class="page-error" role="status" hidden></div><pre id="output-text" class="output-text"></pre><p class="output-note">Markdown、HTML 和 LaTeX 以源码展示；请对照原图检查数字、顺序与遗漏。</p></div>
+            </div>
+            <div id="view-evaluation" class="tab-view" role="tabpanel" aria-labelledby="tab-evaluation" hidden><div id="evaluation-content" class="evaluation-content"><p class="muted">解析完成后，可查看有参考标注样例的自动评测。</p></div></div>
+            <div id="view-record" class="tab-view" role="tabpanel" aria-labelledby="tab-record" hidden><p class="record-note">保留原始输出文本、结束原因、错误与评测口径，便于复现。</p><pre id="record-json" class="record-json">尚无运行记录。</pre></div>
+          </div>
+          <footer class="result-footer"><span id="result-model">当前还没有模型输出</span><button class="text-button" id="download-json" type="button" disabled>导出记录 ↓</button></footer>
+        </section>
+      </div>
+
+      <section class="history-panel panel" aria-labelledby="history-title"><header class="history-heading"><div><span class="panel-kicker">EXPERIMENT LOG</span><h2 id="history-title">最近实验</h2></div><span class="muted" id="history-count">读取中…</span></header><div id="history-list" class="history-list"><p class="history-empty">实验记录保存在服务器，可在刷新后继续查看。</p></div></section>
+      <div class="learning-strip"><span class="learning-number">?</span><div><strong>这次要观察什么</strong><p>先检查标题、数字和表格顺序，再看自动指标。请求成功、字段命中和低字符错误率，各自证明的范围不同。</p></div><button class="text-button" type="button" id="help-inline">看实验指南 ↗</button></div>
+      <footer class="app-footer"><span>DocLens · FDE 文档解析与评测</span><span>模型结果需人工核对 · 学习掌握单独记录</span></footer>
+    </section>
+  </main>
+
+  <dialog id="image-dialog" class="image-dialog"><div class="dialog-heading"><h2 id="image-dialog-title">原始文档</h2><button class="icon-button close-dialog" type="button" aria-label="关闭大图" data-close="image-dialog">×</button></div><img id="dialog-image" alt="文档大图"></dialog>
+  <dialog id="help-dialog" class="help-dialog"><div class="dialog-heading"><div><span class="eyebrow">FIRST EXPERIMENT</span><h2>完成一次可解释的解析</h2></div><button class="icon-button close-dialog" type="button" aria-label="关闭实验指南" data-close="help-dialog">×</button></div><div class="help-body"><ol class="help-steps"><li><strong>先预测</strong><p>选择一个样例，看原图，写下模型最可能漏掉的数字、标点或表格关系。</p></li><li><strong>单页运行</strong><p>文字样例先用纯文本识别，表格样例选表格解析，保持 2048 token，先运行一页。确认有结果，再尝试批量；每次最多 6 页。</p></li><li><strong>逐项核对</strong><p>比较原图与解析文本。查看实际 token、结束原因与评测，达到长度上限的结果按不完整处理。</p></li><li><strong>保存证据</strong><p>导出 JSON，记录一次成功、一次错误和你的解释。助手或程序运行成功不等于自己已经掌握。</p></li></ol><div class="help-note"><strong>指标怎么读</strong><p>CER 是字符编辑距离除以参考字符数，越低越好，可能大于 100%。全文参考只在纯文本识别任务中计算 CER；文档解析可能忽略页眉页脚，两者不能直接比较。字段覆盖只检查值是否出现，不验证字段关联；单元格覆盖只检查指定 HTML 单元格，不等于表格结构与顺序都正确。没有参考标注的上传文件不产生自动准确率。</p></div><p class="muted">页面每 15 秒获取状态；GPU 数值是整卡采样，包含其他进程。取消会等待当前页结束，再停止后续页面。通过本项目用户服务启动时，模型单次最多运行 8 小时，工作台与历史仍保留；前台脚本需在对应终端停止。下次推理前请确认模型就绪。</p></div></dialog>
+  <noscript><div class="noscript">此工作区需要启用 JavaScript 才能连接解析服务。</div></noscript>
+</body>
+</html>

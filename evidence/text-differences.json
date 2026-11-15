@@ -1,0 +1,72 @@
+[
+  {
+    "page_id": "sample-01",
+    "elapsed_seconds": 99.8169,
+    "edits": [
+      {
+        "type": "insert",
+        "reference": "",
+        "output": "##"
+      }
+    ]
+  },
+  {
+    "page_id": "sample-02",
+    "elapsed_seconds": 2.3551,
+    "edits": [
+      {
+        "type": "insert",
+        "reference": "",
+        "output": "#"
+      },
+      {
+        "type": "insert",
+        "reference": "",
+        "output": "##"
+      },
+      {
+        "type": "insert",
+        "reference": "",
+        "output": "##"
+      }
+    ]
+  },
+  {
+    "page_id": "sample-05",
+    "elapsed_seconds": 3.1262,
+    "edits": [
+      {
+        "type": "insert",
+        "reference": "",
+        "output": "##"
+      }
+    ]
+  },
+  {
+    "page_id": "sample-06",
+    "elapsed_seconds": 5.2502,
+    "edits": [
+      {
+        "type": "insert",
+        "reference": "",
+        "output": "##"
+      },
+      {
+        "type": "replace",
+        "reference": "I",
+        "output": "l"
+      }
+    ]
+  },
+  {
+    "page_id": "sample-01",
+    "elapsed_seconds": 2.5323,
+    "edits": [
+      {
+        "type": "insert",
+        "reference": "",
+        "output": "##"
+      }
+    ]
+  }
+]

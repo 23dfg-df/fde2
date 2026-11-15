@@ -1,0 +1,83 @@
+{
+  "id": "21019ca1e5584658bc63c0819b206b8f",
+  "status": "completed",
+  "created_at": "2026-11-15T16:25:15.165403+00:00",
+  "started_at": "2026-11-15T16:25:15.169043+00:00",
+  "finished_at": "2026-11-15T16:25:17.814818+00:00",
+  "task": "structured_parse",
+  "prompt": "提取图中的文字。",
+  "max_tokens": 2048,
+  "model": "tencent/HunyuanOCR",
+  "model_revision": "47644ecc4fc854efa4f505155158831f36773ee4",
+  "physical_gpu": 1,
+  "pages": [
+    {
+      "page_id": "sample-01",
+      "name": "中文资源使用通知",
+      "image_url": "/api/images/sample-01",
+      "status": "completed",
+      "text": "## 实验室 GPU 使用通知\n\n合成教学样本 / 中文通知\n\n通知编号：LAB-NOTICE-001\n\n日期：2026-11-16\n\n主题：共享计算资源使用约定\n\n开始实验前，请确认目标显卡的空闲显存，并核对已有进程的归属。\n\n本次教学任务每次只处理一页文档，保留输入图片、模型输出和运行耗时。\n\n实验结束后，停止自己的模型进程，再检查显存是否释放。\n\n不要将整卡占用直接当作本项目的占用，也不要把接口成功当作答案正确。",
+      "raw_output": "## 实验室 GPU 使用通知\n\n合成教学样本 / 中文通知\n\n通知编号：LAB-NOTICE-001\n\n日期：2026-11-16\n\n主题：共享计算资源使用约定\n\n开始实验前，请确认目标显卡的空闲显存，并核对已有进程的归属。\n\n本次教学任务每次只处理一页文档，保留输入图片、模型输出和运行耗时。\n\n实验结束后，停止自己的模型进程，再检查显存是否释放。\n\n不要将整卡占用直接当作本项目的占用，也不要把接口成功当作答案正确。",
+      "error": null,
+      "evaluation": {
+        "available": true,
+        "mode": "text",
+        "cer": 0.010638,
+        "edit_distance": 2,
+        "reference_characters": 188,
+        "field_coverage": null,
+        "matched_fields": [],
+        "missing_fields": [],
+        "table_cell_coverage": null,
+        "expected_cell_count": null,
+        "matched_cell_count": null,
+        "human_verified": false,
+        "semantic_accuracy": null,
+        "note": "CER=编辑距离/参考字符数，NFKC后删除空白，保留标点和Markdown符号。越低越好，可能大于1；不等于语义准确率。"
+      },
+      "finish_reason": "stop",
+      "model": "tencent/HunyuanOCR",
+      "input_tokens": 1960,
+      "output_tokens": 118,
+      "elapsed_seconds": 2.5323,
+      "average_output_tokens_per_second": 46.599,
+      "ttft_client_seconds": null,
+      "timing_scope": "nonstream_http_wall_seconds",
+      "gpu_before": {
+        "index": 1,
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory_total_mib": 32607,
+        "memory_used_mib": 19691,
+        "memory_free_mib": 12420,
+        "utilization_percent": 0,
+        "sampled_at": "2026-11-15T16:25:15.233572+00:00",
+        "scope": "whole_device_snapshot"
+      },
+      "gpu_after": {
+        "index": 1,
+        "name": "NVIDIA GeForce RTX 5090",
+        "memory_total_mib": 32607,
+        "memory_used_mib": 19691,
+        "memory_free_mib": 12420,
+        "utilization_percent": 12,
+        "sampled_at": "2026-11-15T16:25:17.813594+00:00",
+        "scope": "whole_device_snapshot"
+      },
+      "gpu_measurement_scope": "whole_device_before_after_snapshots_not_peak"
+    }
+  ],
+  "cancel_requested": false,
+  "summary": {
+    "total": 1,
+    "queued": 0,
+    "running": 0,
+    "completed": 1,
+    "partial": 0,
+    "failed": 0,
+    "cancelled": 0,
+    "elapsed_seconds": 2.5323,
+    "semantic_accuracy": null,
+    "note": "completed只表示接口完整返回，不代表识别正确；失败和截断保留在总页数内。"
+  },
+  "note": "合成样本规则分数不是人工语义验收；上传文件默认没有参考答案。"
+}

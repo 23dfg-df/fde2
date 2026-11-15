@@ -1,0 +1,1026 @@
+{
+  "dataset_id": "fde-doc-synthetic-v1",
+  "version": 1,
+  "created_on": "2026-11-16",
+  "description": "6张原创程序生成的教学文档；不是训练数据或真实业务验收集。",
+  "font": {
+    "regular": "STHeiti Light.ttc",
+    "bold": "STHeiti Medium.ttc",
+    "regular_sha256": "a57b0316cc0544f682b8fb9855e14ade79ae77340ef6a01ba9210e25b4c5a5b7",
+    "bold_sha256": "f8fa4a63e2cf500e98e64d4c73260daaba049306cf85dec9e3729bc285b7d645"
+  },
+  "text_reference_policy": "all_visible_text_in_explicit_reading_order",
+  "pages": [
+    {
+      "id": "sample-01",
+      "name": "中文资源使用通知",
+      "kind": "synthetic",
+      "image": "01-notice.png",
+      "width": 1200,
+      "height": 1600,
+      "reference_text": "实验室 GPU 使用通知\n合成教学样本 / 中文通知\n通知编号：LAB-NOTICE-001\n日期：2026-11-16\n主题：共享计算资源使用约定\n开始实验前，请确认目标显卡的空闲显存，并核对已有进程\n的归属。\n本次教学任务每次只处理一页文档，保留输入图片、模型输\n出和运行耗时。\n实验结束后，停止自己的模型进程，再检查显存是否释放。\n不要将整卡占用直接当作本项目的占用，也不要把接口成功\n当作答案正确。",
+      "expected_fields": {},
+      "expected_cells": [],
+      "sha256": "226608e9c58a3744b91a1726934ee8c0c932e2b51d4913d817bbc10ececc41c9",
+      "reference_origin": "original_programmatic_fixture",
+      "visible_text_boxes": [
+        {
+          "text": "实验室 GPU 使用通知",
+          "bbox": [
+            116,
+            89,
+            616,
+            138
+          ]
+        },
+        {
+          "text": "合成教学样本 / 中文通知",
+          "bbox": [
+            84,
+            188,
+            401,
+            215
+          ]
+        },
+        {
+          "text": "通知编号：LAB-NOTICE-001",
+          "bbox": [
+            88,
+            318,
+            572,
+            353
+          ]
+        },
+        {
+          "text": "日期：2026-11-16",
+          "bbox": [
+            88,
+            390,
+            396,
+            425
+          ]
+        },
+        {
+          "text": "主题：共享计算资源使用约定",
+          "bbox": [
+            88,
+            461,
+            582,
+            498
+          ]
+        },
+        {
+          "text": "开始实验前，请确认目标显卡的空闲显存，并核对已有进程",
+          "bbox": [
+            88,
+            581,
+            1102,
+            618
+          ]
+        },
+        {
+          "text": "的归属。",
+          "bbox": [
+            88,
+            646,
+            244,
+            682
+          ]
+        },
+        {
+          "text": "本次教学任务每次只处理一页文档，保留输入图片、模型输",
+          "bbox": [
+            88,
+            752,
+            1102,
+            789
+          ]
+        },
+        {
+          "text": "出和运行耗时。",
+          "bbox": [
+            88,
+            815,
+            361,
+            852
+          ]
+        },
+        {
+          "text": "实验结束后，停止自己的模型进程，再检查显存是否释放。",
+          "bbox": [
+            88,
+            921,
+            1102,
+            958
+          ]
+        },
+        {
+          "text": "不要将整卡占用直接当作本项目的占用，也不要把接口成功",
+          "bbox": [
+            88,
+            1027,
+            1102,
+            1064
+          ]
+        },
+        {
+          "text": "当作答案正确。",
+          "bbox": [
+            88,
+            1092,
+            361,
+            1128
+          ]
+        }
+      ],
+      "evaluation_mode": "text",
+      "difficulty": "easy",
+      "description": "清晰中文段落与编号；逐字参考覆盖页面所有可见文字。"
+    },
+    {
+      "id": "sample-02",
+      "name": "英文推理服务手册",
+      "kind": "synthetic",
+      "image": "02-english-guide.png",
+      "width": 1200,
+      "height": 1600,
+      "reference_text": "Inference Service Quick Guide\nSynthetic teaching sample / English instructions\nProject: Document Parsing Lab\nVersion: 1.0\n1. Check that the model service is ready.\n2. Select one page and submit a request.\n3. Save the raw output before editing it.\n4. Compare the result with the source image.\nA successful HTTP response does not prove\nthat every word or number is correct.\nRecord latency, token usage, and failures.\nUse the same input when comparing settings.",
+      "expected_fields": {},
+      "expected_cells": [],
+      "sha256": "76a2906434045bf2776ee874c68a9068a31122c8fda730caea1c83de5b8aeb56",
+      "reference_origin": "original_programmatic_fixture",
+      "visible_text_boxes": [
+        {
+          "text": "Inference Service Quick Guide",
+          "bbox": [
+            116,
+            89,
+            886,
+            132
+          ]
+        },
+        {
+          "text": "Synthetic teaching sample / English instructions",
+          "bbox": [
+            84,
+            188,
+            745,
+            216
+          ]
+        },
+        {
+          "text": "Project: Document Parsing Lab",
+          "bbox": [
+            88,
+            322,
+            595,
+            355
+          ]
+        },
+        {
+          "text": "Version: 1.0",
+          "bbox": [
+            88,
+            398,
+            272,
+            426
+          ]
+        },
+        {
+          "text": "1. Check that the model service is ready.",
+          "bbox": [
+            88,
+            550,
+            758,
+            583
+          ]
+        },
+        {
+          "text": "2. Select one page and submit a request.",
+          "bbox": [
+            88,
+            626,
+            767,
+            659
+          ]
+        },
+        {
+          "text": "3. Save the raw output before editing it.",
+          "bbox": [
+            88,
+            702,
+            740,
+            735
+          ]
+        },
+        {
+          "text": "4. Compare the result with the source image.",
+          "bbox": [
+            88,
+            778,
+            828,
+            811
+          ]
+        },
+        {
+          "text": "A successful HTTP response does not prove",
+          "bbox": [
+            88,
+            931,
+            780,
+            963
+          ]
+        },
+        {
+          "text": "that every word or number is correct.",
+          "bbox": [
+            88,
+            1006,
+            694,
+            1039
+          ]
+        },
+        {
+          "text": "Record latency, token usage, and failures.",
+          "bbox": [
+            88,
+            1158,
+            782,
+            1191
+          ]
+        },
+        {
+          "text": "Use the same input when comparing settings.",
+          "bbox": [
+            88,
+            1234,
+            835,
+            1267
+          ]
+        }
+      ],
+      "evaluation_mode": "text",
+      "difficulty": "easy",
+      "description": "英语、编号与标点；固定人工定义的逐字参考。"
+    },
+    {
+      "id": "sample-03",
+      "name": "中英混合资产表单",
+      "kind": "synthetic",
+      "image": "03-asset-form.png",
+      "width": 1200,
+      "height": 1600,
+      "reference_text": "文档解析教学资产卡\n合成教学样本 / Synthetic asset record\n资产编号 Asset ID\nDOC-LAB-031\n服务名称 Service\nDocument Parser\n责任组 Team\n实验教学组\n目标设备 Device\nGPU 1\n访问地址 Endpoint\n127.0.0.1:18400\n模型标识 Model\nHunyuanOCR\n参考页数 Pages\n6\n状态 Status\n待验收 Pending",
+      "expected_fields": {
+        "asset_id": "DOC-LAB-031",
+        "service": "Document Parser",
+        "team": "实验教学组",
+        "device": "GPU 1",
+        "endpoint": "127.0.0.1:18400",
+        "model": "HunyuanOCR",
+        "pages": "6",
+        "status": "待验收 Pending"
+      },
+      "expected_cells": [],
+      "sha256": "fc93c6f0b7801efc5e44ab412ee7ecdb572cefdb059c77d8e3594f39411f8dd6",
+      "reference_origin": "original_programmatic_fixture",
+      "visible_text_boxes": [
+        {
+          "text": "文档解析教学资产卡",
+          "bbox": [
+            116,
+            89,
+            584,
+            138
+          ]
+        },
+        {
+          "text": "合成教学样本 / Synthetic asset record",
+          "bbox": [
+            84,
+            188,
+            595,
+            216
+          ]
+        },
+        {
+          "text": "资产编号 Asset ID",
+          "bbox": [
+            106,
+            336,
+            361,
+            365
+          ]
+        },
+        {
+          "text": "DOC-LAB-031",
+          "bbox": [
+            578,
+            336,
+            801,
+            364
+          ]
+        },
+        {
+          "text": "服务名称 Service",
+          "bbox": [
+            106,
+            457,
+            355,
+            487
+          ]
+        },
+        {
+          "text": "Document Parser",
+          "bbox": [
+            578,
+            458,
+            863,
+            486
+          ]
+        },
+        {
+          "text": "责任组 Team",
+          "bbox": [
+            106,
+            580,
+            297,
+            609
+          ]
+        },
+        {
+          "text": "实验教学组",
+          "bbox": [
+            578,
+            580,
+            748,
+            612
+          ]
+        },
+        {
+          "text": "目标设备 Device",
+          "bbox": [
+            106,
+            702,
+            353,
+            731
+          ]
+        },
+        {
+          "text": "GPU 1",
+          "bbox": [
+            578,
+            702,
+            678,
+            730
+          ]
+        },
+        {
+          "text": "访问地址 Endpoint",
+          "bbox": [
+            106,
+            824,
+            381,
+            854
+          ]
+        },
+        {
+          "text": "127.0.0.1:18400",
+          "bbox": [
+            578,
+            824,
+            823,
+            852
+          ]
+        },
+        {
+          "text": "模型标识 Model",
+          "bbox": [
+            106,
+            946,
+            341,
+            975
+          ]
+        },
+        {
+          "text": "HunyuanOCR",
+          "bbox": [
+            578,
+            946,
+            805,
+            979
+          ]
+        },
+        {
+          "text": "参考页数 Pages",
+          "bbox": [
+            106,
+            1067,
+            338,
+            1098
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            578,
+            1068,
+            597,
+            1096
+          ]
+        },
+        {
+          "text": "状态 Status",
+          "bbox": [
+            106,
+            1189,
+            269,
+            1219
+          ]
+        },
+        {
+          "text": "待验收 Pending",
+          "bbox": [
+            578,
+            1189,
+            826,
+            1223
+          ]
+        }
+      ],
+      "evaluation_mode": "fields",
+      "difficulty": "medium",
+      "description": "仅检查8个字段值的出现情况；不是表单语义或键值关系的完整判定。"
+    },
+    {
+      "id": "sample-04",
+      "name": "四行四列资源表格",
+      "kind": "synthetic",
+      "image": "04-resource-table.png",
+      "width": 1200,
+      "height": 1600,
+      "reference_text": "共享资源登记表\n合成教学样本 / 4 行 × 4 列，包含表头\n设备\n编号\n状态\n用途\nGPU 0\nDEV-A01\n已分配\n文本推理\nGPU 1\nDEV-B02\n待分配\n文档解析\nCPU\nDEV-C03\n共享\n资料检索",
+      "expected_fields": {},
+      "expected_cells": [
+        "设备",
+        "编号",
+        "状态",
+        "用途",
+        "GPU 0",
+        "DEV-A01",
+        "已分配",
+        "文本推理",
+        "GPU 1",
+        "DEV-B02",
+        "待分配",
+        "文档解析",
+        "CPU",
+        "DEV-C03",
+        "共享",
+        "资料检索"
+      ],
+      "sha256": "4f25fc291d404d15ac6c67022ff7a4c6f43034d06e6d7f1d23d48178c397eb3c",
+      "reference_origin": "original_programmatic_fixture",
+      "visible_text_boxes": [
+        {
+          "text": "共享资源登记表",
+          "bbox": [
+            116,
+            90,
+            480,
+            139
+          ]
+        },
+        {
+          "text": "合成教学样本 / 4 行 × 4 列，包含表头",
+          "bbox": [
+            84,
+            187,
+            569,
+            215
+          ]
+        },
+        {
+          "text": "设备",
+          "bbox": [
+            107,
+            433,
+            175,
+            465
+          ]
+        },
+        {
+          "text": "编号",
+          "bbox": [
+            347,
+            434,
+            415,
+            465
+          ]
+        },
+        {
+          "text": "状态",
+          "bbox": [
+            617,
+            433,
+            685,
+            464
+          ]
+        },
+        {
+          "text": "用途",
+          "bbox": [
+            857,
+            433,
+            925,
+            464
+          ]
+        },
+        {
+          "text": "GPU 0",
+          "bbox": [
+            107,
+            601,
+            207,
+            629
+          ]
+        },
+        {
+          "text": "DEV-A01",
+          "bbox": [
+            347,
+            601,
+            488,
+            629
+          ]
+        },
+        {
+          "text": "已分配",
+          "bbox": [
+            617,
+            603,
+            719,
+            632
+          ]
+        },
+        {
+          "text": "文本推理",
+          "bbox": [
+            857,
+            601,
+            993,
+            632
+          ]
+        },
+        {
+          "text": "GPU 1",
+          "bbox": [
+            107,
+            769,
+            207,
+            797
+          ]
+        },
+        {
+          "text": "DEV-B02",
+          "bbox": [
+            347,
+            769,
+            483,
+            797
+          ]
+        },
+        {
+          "text": "待分配",
+          "bbox": [
+            617,
+            768,
+            719,
+            801
+          ]
+        },
+        {
+          "text": "文档解析",
+          "bbox": [
+            857,
+            769,
+            993,
+            800
+          ]
+        },
+        {
+          "text": "CPU",
+          "bbox": [
+            107,
+            937,
+            177,
+            965
+          ]
+        },
+        {
+          "text": "DEV-C03",
+          "bbox": [
+            347,
+            937,
+            491,
+            965
+          ]
+        },
+        {
+          "text": "共享",
+          "bbox": [
+            617,
+            937,
+            685,
+            969
+          ]
+        },
+        {
+          "text": "资料检索",
+          "bbox": [
+            857,
+            937,
+            993,
+            969
+          ]
+        }
+      ],
+      "evaluation_mode": "table",
+      "difficulty": "medium",
+      "expected_table": {
+        "rows": 4,
+        "columns": 4,
+        "cells": [
+          [
+            "设备",
+            "编号",
+            "状态",
+            "用途"
+          ],
+          [
+            "GPU 0",
+            "DEV-A01",
+            "已分配",
+            "文本推理"
+          ],
+          [
+            "GPU 1",
+            "DEV-B02",
+            "待分配",
+            "文档解析"
+          ],
+          [
+            "CPU",
+            "DEV-C03",
+            "共享",
+            "资料检索"
+          ]
+        ]
+      },
+      "description": "16个单元格正文的覆盖与HTML表格存在性；不把词面覆盖当结构正确率。"
+    },
+    {
+      "id": "sample-05",
+      "name": "双栏阅读顺序挑战",
+      "kind": "synthetic",
+      "image": "05-two-column.png",
+      "width": 1200,
+      "height": 1600,
+      "reference_text": "双栏学习卡：申请与验收\n合成教学样本 / 阅读顺序：先左栏，再右栏\n左栏：申请流程\n第一步，记录实验目标。\n只选择一个需要验证的问题。\n第二步，检查计算资源。\n记录目标卡、空闲显存和时间。\n第三步，保存初始配置。\n保留模型名称与输入文件。\n最后，提交一次短请求。\n右栏：验收记录\n先检查请求是否成功。\n再比较原图与生成文字。\n编号、金额和日期要逐项核对。\n失败的页面也要保存。\n不要只挑选正确的案例。\n改变参数前写下预期。\n复做后解释差异的原因。",
+      "expected_fields": {},
+      "expected_cells": [],
+      "sha256": "a04b8e94d4914048516d1be398609723d2675b2ec23b11ccf23842e9381b57f8",
+      "reference_origin": "original_programmatic_fixture",
+      "visible_text_boxes": [
+        {
+          "text": "双栏学习卡：申请与验收",
+          "bbox": [
+            116,
+            89,
+            688,
+            138
+          ]
+        },
+        {
+          "text": "合成教学样本 / 阅读顺序：先左栏，再右栏",
+          "bbox": [
+            84,
+            187,
+            633,
+            215
+          ]
+        },
+        {
+          "text": "左栏：申请流程",
+          "bbox": [
+            88,
+            325,
+            340,
+            359
+          ]
+        },
+        {
+          "text": "第一步，记录实验目标。",
+          "bbox": [
+            88,
+            421,
+            429,
+            450
+          ]
+        },
+        {
+          "text": "只选择一个需要验证的问题。",
+          "bbox": [
+            88,
+            518,
+            491,
+            547
+          ]
+        },
+        {
+          "text": "第二步，检查计算资源。",
+          "bbox": [
+            88,
+            615,
+            429,
+            644
+          ]
+        },
+        {
+          "text": "记录目标卡、空闲显存和时间。",
+          "bbox": [
+            88,
+            712,
+            522,
+            741
+          ]
+        },
+        {
+          "text": "第三步，保存初始配置。",
+          "bbox": [
+            88,
+            809,
+            429,
+            838
+          ]
+        },
+        {
+          "text": "保留模型名称与输入文件。",
+          "bbox": [
+            88,
+            906,
+            460,
+            936
+          ]
+        },
+        {
+          "text": "最后，提交一次短请求。",
+          "bbox": [
+            88,
+            1003,
+            429,
+            1032
+          ]
+        },
+        {
+          "text": "右栏：验收记录",
+          "bbox": [
+            644,
+            325,
+            896,
+            359
+          ]
+        },
+        {
+          "text": "先检查请求是否成功。",
+          "bbox": [
+            644,
+            421,
+            954,
+            451
+          ]
+        },
+        {
+          "text": "再比较原图与生成文字。",
+          "bbox": [
+            644,
+            518,
+            985,
+            548
+          ]
+        },
+        {
+          "text": "编号、金额和日期要逐项核对。",
+          "bbox": [
+            644,
+            615,
+            1078,
+            644
+          ]
+        },
+        {
+          "text": "失败的页面也要保存。",
+          "bbox": [
+            644,
+            712,
+            954,
+            742
+          ]
+        },
+        {
+          "text": "不要只挑选正确的案例。",
+          "bbox": [
+            644,
+            809,
+            985,
+            838
+          ]
+        },
+        {
+          "text": "改变参数前写下预期。",
+          "bbox": [
+            644,
+            906,
+            954,
+            935
+          ]
+        },
+        {
+          "text": "复做后解释差异的原因。",
+          "bbox": [
+            644,
+            1003,
+            985,
+            1032
+          ]
+        }
+      ],
+      "evaluation_mode": "text",
+      "difficulty": "hard",
+      "reading_order": "title, subtitle, complete left column, complete right column",
+      "description": "CER同时受到识别与阅读顺序影响；应另行人工检查左右栏是否串行。"
+    },
+    {
+      "id": "sample-06",
+      "name": "小字与近似字符挑战",
+      "kind": "synthetic",
+      "image": "06-low-contrast.png",
+      "width": 1200,
+      "height": 1600,
+      "reference_text": "小字与低对比度核对单\n合成教学样本 / 字符辨识压力测试\n记录编号：QC-2026-061。以下内容用于检验小字号和近似字符，不代表真实业务\n记录。\n样本 A 的设备码是 OCR-O0-011，样本 B 的设备码是 OCR-00-101。字母 O 与数\n字 0 必须分别识别。\n校验序列：Il1、B8、S5、Z2。请保留大小写、数字和标点，不要根据常识替换原文\n。\n记录值：12.50 ms、0.75 GiB、99.0%。小数点的位置变化会改变含义，不能只检\n查数字是否出现。\n时间分别为 08:05、18:50 和 00:15；日期分别为 2026-11-06、2026-11-16 和 202\n6-12-01。\n批次编号分别为 A-1007、A-1070 和 A-1700。解析时应保持原始顺序，并保留三\n个不同编号。\n结论：模型输出需要逐项核对。低对比度页面出现漏字、错字或重复时，记录原始\n输出和失败原因。",
+      "expected_fields": {},
+      "expected_cells": [],
+      "sha256": "cd76a8a2696c4991c9830c1299962ab1d159366a77a6ff38cd111da17bc3ea06",
+      "reference_origin": "original_programmatic_fixture",
+      "visible_text_boxes": [
+        {
+          "text": "小字与低对比度核对单",
+          "bbox": [
+            116,
+            89,
+            636,
+            138
+          ]
+        },
+        {
+          "text": "合成教学样本 / 字符辨识压力测试",
+          "bbox": [
+            84,
+            187,
+            517,
+            216
+          ]
+        },
+        {
+          "text": "记录编号：QC-2026-061。以下内容用于检验小字号和近似字符，不代表真实业务",
+          "bbox": [
+            88,
+            341,
+            1105,
+            368
+          ]
+        },
+        {
+          "text": "记录。",
+          "bbox": [
+            88,
+            391,
+            172,
+            416
+          ]
+        },
+        {
+          "text": "样本 A 的设备码是 OCR-O0-011，样本 B 的设备码是 OCR-00-101。字母 O 与数",
+          "bbox": [
+            88,
+            486,
+            1097,
+            512
+          ]
+        },
+        {
+          "text": "字 0 必须分别识别。",
+          "bbox": [
+            88,
+            533,
+            342,
+            560
+          ]
+        },
+        {
+          "text": "校验序列：Il1、B8、S5、Z2。请保留大小写、数字和标点，不要根据常识替换原文",
+          "bbox": [
+            88,
+            629,
+            1103,
+            656
+          ]
+        },
+        {
+          "text": "。",
+          "bbox": [
+            88,
+            688,
+            116,
+            701
+          ]
+        },
+        {
+          "text": "记录值：12.50 ms、0.75 GiB、99.0%。小数点的位置变化会改变含义，不能只检",
+          "bbox": [
+            88,
+            773,
+            1091,
+            800
+          ]
+        },
+        {
+          "text": "查数字是否出现。",
+          "bbox": [
+            88,
+            822,
+            312,
+            848
+          ]
+        },
+        {
+          "text": "时间分别为 08:05、18:50 和 00:15；日期分别为 2026-11-06、2026-11-16 和 202",
+          "bbox": [
+            88,
+            917,
+            1106,
+            944
+          ]
+        },
+        {
+          "text": "6-12-01。",
+          "bbox": [
+            88,
+            966,
+            214,
+            989
+          ]
+        },
+        {
+          "text": "批次编号分别为 A-1007、A-1070 和 A-1700。解析时应保持原始顺序，并保留三",
+          "bbox": [
+            88,
+            1061,
+            1091,
+            1088
+          ]
+        },
+        {
+          "text": "个不同编号。",
+          "bbox": [
+            88,
+            1110,
+            256,
+            1136
+          ]
+        },
+        {
+          "text": "结论：模型输出需要逐项核对。低对比度页面出现漏字、错字或重复时，记录原始",
+          "bbox": [
+            88,
+            1205,
+            1096,
+            1232
+          ]
+        },
+        {
+          "text": "输出和失败原因。",
+          "bbox": [
+            88,
+            1254,
+            312,
+            1280
+          ]
+        }
+      ],
+      "evaluation_mode": "text",
+      "difficulty": "hard",
+      "description": "28px低对比度文字、近似字符和小数；只用于受控压力测试，不代表扫描件分布。"
+    }
+  ]
+}

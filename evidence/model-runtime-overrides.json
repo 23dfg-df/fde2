@@ -1,0 +1,1 @@
+{"text_config": {"rope_scaling": {"alpha": 1000.0, "beta_fast": 32, "beta_slow": 1, "factor": 1.0, "mscale": 1.0, "mscale_all_dim": 1.0, "rope_theta": 10000.0, "rope_type": "xdrope", "type": "xdrope", "xdrope_section": [16, 16, 16, 16]}}}
